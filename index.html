@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ja"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261019-04-fd46897","C":{"Abril Fatface":"YACgEZbkUVE,0","Albert Sans":"YAHO2HRfeh4,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo Black":"YACgEZulLoA,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Baloo 2":"YAHO2IcQUcM,0","Barlow Condensed":"YAFdJljEuFc,0","Barlow":"YAFdJsyuOPM,1","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Cairo":"YAFdtXpDzlQ,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Cinzel":"YACgEeV8bIQ,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Figtree":"YAHO2b-mV7A,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Fredoka":"YACgEZml080,0","Georgia":"YAGzXkO0pEM,0","Hanken Grotesk":"YAHO2VB9G0I,0","Helvetica":"YAFcf7zkXN0,0","IBM Plex Mono":"YAFdJkmvhGI,0","IBM Plex Sans":"YAFdJgT0SHI,0","Impact":"YAFcfnjI7Vk,0","Instrument Sans":"YAHO2bKyaSQ,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Italiana":"YAHO2Toik_w,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Karla":"YAHO2V2NSXM,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Libre Caslon Display":"YAHO2XhLmt0,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Noto Sans JP":"YAFdJiHXlcI,0","Noto Sans KR":"YAGsojZj-RQ,0","Nunito Sans":"YAFdtQJYB9w,1","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Open Sans":"YAFdJt8dAY0,1","Oswald":"YACgEQY10lw,0","Outfit":"YAHO2nVlg14,0","Pacifico":"YADLjORQ1u4,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAHO2gdhi18,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Public Sans":"YAFdJj8NdaU,1","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","STIX Two Text":"YAHO2joycuk,0","Sarabun":"YAFdJssSnME,0","Schibsted Grotesk":"YAHO2sWydRk,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Space Grotesk":"YAHO2sjPCSM,0","Space Mono":"YADW1-vpsoc,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0"}}');</script><script src="/_sdk/05db820ba1544614.telemetry_sdk.js" integrity="sha512-a7JzkQDDcioSXpM61nxTfeRW7PcxWQy5+BrhyeTFmQFsXJ+Gncm0y50u7fTA7qOPegFnRgqCfa0mGUOK1yjDWQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HIDDEN CLASSIC 展示見取図</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; }
+    body { font-family: "DM Sans", "Noto Sans JP", sans-serif; overflow: hidden; }
+    .app-shell {
+      width: 100%;
+      height: calc(100 * min(var(--vh, 1vh), 1vh));
+      min-height: 400px;
+      position: relative;
+      overflow: hidden;
+      background: #18262b;
+    }
+    #scene { position: absolute; inset: 0; touch-action: none; cursor: grab; }
+    #scene:active { cursor: grabbing; }
+    #scene:focus-visible { outline: 3px solid #e9cc82; outline-offset: -5px; }
+    #scene canvas { display: block; width: 100%; height: 100%; }
+    .scene-shade {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(90deg, rgba(11, 25, 29, .46), transparent 29%),
+                  linear-gradient(0deg, rgba(11, 25, 29, .28), transparent 22%);
+    }
+    .title-wrap { position: absolute; left: clamp(18px, 3vw, 42px); top: clamp(18px, 3vw, 38px); pointer-events: none; }
+    .title-wrap h1 { margin: 0; letter-spacing: -.055em; line-height: 1.05; text-shadow: 0 3px 22px rgba(0,0,0,.3); }
+    @media (max-width: 650px) { .title-wrap { top: 18px; left: 18px; } }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/570d53629f0b998d.data_sdk.js" type="text/javascript" integrity="sha512-JEN39+V+Nvv9ZZOVS8vNk1iA9ErZJHTdgOw9KzPuMiK7m0I+KPEr/wmTnCFIQVsDjCZgJWfGnFi1IQh2Io2qyA=="></script>
+  <script src="/_sdk/27a73d0f6d576f4d.editing_sdk.js" type="text/javascript" integrity="sha512-0x+G+gK8ndpjUSDbA089Mrgu5PHq4v9Csb0QtQHziS+rPUPoxPkx7w9quugJtYtMDiv2wfqmcYtCInS0i6eOvg=="></script>
+  <script src="/_sdk/03eb2403dcb2c820.resizing_sdk.js" type="text/javascript" integrity="sha512-3rStQpeHJ9SpUz/tPWj3qoOTc5Wdb4M77IFGFVtMTQ/GLbCg6/OVP+yWZaTo/YDzpJdLk+FvEXzvR4ZNQQ4/HQ=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(24, 38, 43);">
+  <main class="app-shell w-full">
+   <div id="scene" tabindex="0" role="img" aria-label="12メートル×8メートル、高さ3メートルのミュージックサロンの3D見取図。企画展「HIDDEN CLASSIC」の展示レイアウト。"></div>
+   <div class="scene-shade" aria-hidden="true"></div>
+   <header class="title-wrap">
+    <h1 data-template-id="page-title" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 38px;">HIDDEN CLASSIC</h1>
+   </header>
+  </main>
+  <script>
+  (() => {
+    const host = document.getElementById("scene");
+    if (!window.THREE) {
+      host.setAttribute("aria-label", "3D展示空間を表示できませんでした。");
+      return;
+    }
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x26383c);
+    scene.fog = new THREE.Fog(0x26383c, 32, 58);
+
+    const camera = new THREE.PerspectiveCamera(38, 1, .1, 100);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.55;
+    host.appendChild(renderer.domElement);
+
+    const mat = (color, roughness = .78, metalness = 0) =>
+      new THREE.MeshStandardMaterial({ color, roughness, metalness });
+    const M = {
+      white: mat(0xf5f2e9), edge: mat(0xd9d8cf), oak: mat(0xb58d65),
+      paleOak: mat(0xd5b995), woodGrain: mat(0xaa886b),
+      charcoal: mat(0x27363b, .55), darkScreen: mat(0x192a31, .26),
+      paper: mat(0xfffbf1), brass: mat(0xc5a267, .34, .55),
+      moss: mat(0x668b71), sage: mat(0xa4bca2),
+      slate: mat(0x7596a8), sand: mat(0xc9a77d),
+      coral: mat(0xb47775), stair: mat(0xc4c8c1),
+      glass: new THREE.MeshPhysicalMaterial({
+        color: 0xe2f4f1, transparent: true, opacity: .32,
+        roughness: .08, metalness: .1, side: THREE.DoubleSide, depthWrite: false
+      }),
+      partition: mat(0x32454a)
+    };
+
+    function box(w, h, d, x, y, z, material, parent = scene) {
+      const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), material);
+      mesh.position.set(x, y, z);
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      parent.add(mesh);
+      return mesh;
+    }
+    function cylinder(r, h, x, y, z, material, parent = scene, segments = 28) {
+      const mesh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, segments), material);
+      mesh.position.set(x, y, z);
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      parent.add(mesh);
+      return mesh;
+    }
+    function floor(w, d, x, y, z, material) {
+      const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, d), material);
+      mesh.rotation.x = -Math.PI / 2;
+      mesh.position.set(x, y, z);
+      mesh.receiveShadow = true;
+      scene.add(mesh);
+      return mesh;
+    }
+    function label(text, w, h, x, y, z, options = {}) {
+      const canvas = document.createElement("canvas");
+      canvas.width = 1024;
+      canvas.height = 256;
+      const ctx = canvas.getContext("2d");
+      if (options.background) {
+        ctx.fillStyle = options.background;
+        ctx.fillRect(0, 0, 1024, 256);
+      }
+      ctx.fillStyle = options.color || "#263c3c";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = `700 ${options.size || 112}px "${options.font || "Noto Sans JP"}", "DM Sans", sans-serif`;
+      ctx.fillText(text, 512, 133, 968);
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      const mesh = new THREE.Mesh(
+        new THREE.PlaneGeometry(w, h),
+        new THREE.MeshBasicMaterial({
+          map: texture, transparent: !options.background,
+          side: THREE.DoubleSide, depthWrite: false
+        })
+      );
+      mesh.position.set(x, y, z);
+      mesh.rotation.y = options.rotationY || 0;
+      if (options.onFloor) mesh.rotation.x = -Math.PI / 2;
+      scene.add(mesh);
+    }
+    function framedArt(w, h, x, y, z, background, accent, rotationY = 0) {
+      const group = new THREE.Group();
+      group.position.set(x, y, z);
+      group.rotation.y = rotationY;
+      scene.add(group);
+      box(w + .07, h + .07, .045, 0, 0, 0, M.oak, group);
+      box(w, h, .012, 0, 0, .033, background, group);
+      box(w * .71, h * .035, .012, 0, h * .19, .045, accent, group);
+      box(w * .53, h * .025, .012, -w * .09, -h * .23, .045, accent, group);
+      return group;
+    }
+    function headphones(x, y, z, rotationY = 0) {
+      const group = new THREE.Group();
+      group.position.set(x, y, z);
+      group.rotation.y = rotationY;
+      scene.add(group);
+      const band = new THREE.Mesh(new THREE.TorusGeometry(.17, .025, 10, 30, Math.PI), M.charcoal);
+      band.rotation.z = Math.PI;
+      group.add(band);
+      box(.075, .16, .09, -.16, -.12, 0, M.charcoal, group);
+      box(.075, .16, .09, .16, -.12, 0, M.charcoal, group);
+    }
+    function spotlight(x, z, color) {
+      cylinder(.115, .075, x, 2.88, z, M.charcoal);
+      const light = new THREE.SpotLight(color, 2.0, 5.6, .63, .85);
+      light.position.set(x, 2.82, z);
+      light.target.position.set(x, 0, z);
+      scene.add(light, light.target);
+    }
+
+    // 床・外枠の基本設計
+    floor(28, 24, 0, -.22, .65, mat(0x45565a));
+    box(12.22, .23, 8.22, 0, -.12, 0, M.charcoal);
+    box(12, .075, 8, 0, .035, 0, M.paleOak);
+    for (let z = -3.84; z < 4; z += .32)
+      box(11.94, .003, .009, 0, .076, z, M.woodGrain);
+
+    // 各ゾーンの床カラー分け（ゾーニングを明確化）
+    function zoneFloor(w, d, x, z, color) {
+      floor(w, d, x, .081, z, new THREE.MeshStandardMaterial({
+        color, transparent: true, opacity: .18, roughness: 1, depthWrite: false
+      }));
+    }
+    zoneFloor(3.2, 7.4, -4.5, 0, 0x559779); // 日常ゾーン
+    zoneFloor(5.2, 3.4, -1.2, -2.2, 0x829e99); // 文学ゾーン
+    zoneFloor(5.2, 3.4, 3.2, -2.2, 0xc2a17c); // 映画ゾーン
+    zoneFloor(6.5, 3.6, 2.6, 1.4, 0xb78183); // ゲームゾーン
+
+    // 外壁
+    box(12, 3, .14, 0, 1.5, -4.07, M.white);
+    box(.14, 3, 8, -6.07, 1.5, 0, M.white);
+    box(.14, 3, 8, 6.07, 1.5, 0, M.white);
+
+    // ★中央や各エリアを区切るパーテーション・間仕切り壁の追加（空間に立体感と密度を出す）
+    box(.15, 2.5, 3.2, -2.8, 1.25, 0.4, M.partition); // 日常とゲームを分ける縦の間仕切り
+    box(3.5, 2.5, .15, 0.5, 1.25, -0.4, M.partition); // 奥側（文学・映画）と手前側を緩やかに分ける横の間仕切り
+
+    // 入口（手前側・左寄り）と階段・EV
+    const entranceL = -5.05, entranceR = -3.05;
+    box(.95, 2.28, .14, -5.525, 1.14, 4.07, M.white);
+    box(9.05, 2.28, .14, 1.475, 1.14, 4.07, M.white);
+    box(2, .72, .14, -4.05, 2.64, 4.07, M.white);
+    for (const [hinge, direction] of [[entranceL, 1], [entranceR, -1]]) {
+      const door = new THREE.Group();
+      door.position.set(hinge, 0, 4.08);
+      door.rotation.y = direction === 1 ? -.55 : .55;
+      scene.add(door);
+      box(.91, 2.02, .02, direction * .5, 1.12, 0, M.glass, door);
+    }
+
+    // 左側の階段＆EV構造
+    box(4.0, .17, 8.10, -8.08, -.13, 0, M.edge);
+    box(.13, 1.00, 8.05, -10.08, .5, 0, M.edge);
+    const evX = -.65;
+    box(2.45, .18, 2.35, evX, -.10, 5.23, M.edge);
+    box(2.45, 2.36, .14, evX, 1.18, 6.34, M.white);
+    label("EV", .53, .27, -.64, 2.58, 6.43, { size: 133 });
+
+    // 1. 【日常ゾーン】（左側エリア）給湯器模型＆音波パネル
+    box(.11, 2.1, 6.95, -5.94, 1.42, -.04, M.moss);
+    label("日常", 1.7, .4, -5.867, 2.58, 1.52, { color: "#fff9e9", rotationY: Math.PI / 2 });
+    box(1.38, .16, .88, -4.5, .76, 0.5, M.oak); // 給湯器展示台
+    cylinder(.22, .65, -4.5, 1.2, 0.5, M.white); // 給湯器模型本体
+    cylinder(.08, .7, -4.1, 1.1, 0.3, M.brass); // サンプルースタンド
+
+    // 2. 【文学ゾーン】（奥の左側）本棚と「読み聴きブース」
+    box(5.12, 2.08, .39, -3.31, 1.17, -3.75, M.oak); // 奥の大型本棚
+    for (let i = 0; i < 14; i++) {
+      box(.22, .45, .25, -5.3 + i * 0.35, .8, -3.5, i % 2 ? M.coral : M.slate);
+    }
+    label("文学", 1.48, .36, -3.38, 2.57, -3.975, { color: "#31484a", background: "#eee9dc" });
+    // 中央の読書・リスニングテーブル
+    box(1.8, .42, 1.0, -2.8, .35, -1.8, M.oak);
+    box(.5, .5, .05, -2.8, .75, -2.2, M.white); // 解説パネル
+    headphones(-3.2, .8, -1.8);
+    headphones(-2.4, .8, -1.8);
+
+    // 3. 【映画ゾーン】（奥の右側）湾曲大画面スクリーン＆シアター風空間
+    const movieCanvas = document.createElement("canvas");
+    movieCanvas.width = 1024; movieCanvas.height = 512;
+    const mc = movieCanvas.getContext("2d");
+    mc.fillStyle = "#172e3c"; mc.fillRect(0, 0, 1024, 512);
+    mc.fillStyle = "#d5a780"; mc.fillRect(100, 200, 824, 120);
+    const movieTexture = new THREE.CanvasTexture(movieCanvas);
+    const screenCurve = new THREE.CylinderGeometry(5.2, 5.2, 1.8, 32, 1, true, -Math.PI * 0.15, Math.PI * 0.3);
+    const bigScreen = new THREE.Mesh(screenCurve, new THREE.MeshBasicMaterial({ map: movieTexture, side: THREE.DoubleSide }));
+    bigScreen.position.set(3.8, 1.45, -3.3);
+    scene.add(bigScreen);
+    label("映画", 1.38, .39, 3.8, 2.72, -3.973, { color: "#39484b" });
+    // 映画鑑賞用のベンチ・段差
+    box(3.2, .25, 1.2, 3.6, .15, -2.3, M.oak);
+    box(3.0, .25, 1.0, 3.6, .35, -1.6, M.charcoal);
+
+    // 4. 【ゲームゾーン】（右側壁面＆手前側）アーケード筐体と音楽体験
+    label("ゲーム", 1.55, .39, 5.964, 2.60, 1.37, { color: "#514147", rotationY: -Math.PI / 2 });
+    function arcade(x, z, accent, rotation = 0) {
+      const group = new THREE.Group();
+      group.position.set(x, 0, z);
+      group.rotation.y = rotation;
+      scene.add(group);
+      box(.67, 1.64, .70, 0, .90, 0, M.charcoal, group);
+      box(.71, .32, .73, 0, 1.57, 0, accent, group);
+      box(.52, .46, .025, 0, 1.15, .37, M.darkScreen, group);
+    }
+    // 右側壁に並ぶアーケード筐体（元ネタ壁）
+    arcade(5.24, -0.8, M.coral, -Math.PI / 2);
+    arcade(5.24, 0.1, M.slate, -Math.PI / 2);
+    arcade(5.24, 1.0, M.sand, -Math.PI / 2);
+    // 手前側の壁沿いに並ぶ筐体
+    arcade(3.2, 3.38, M.coral, Math.PI);
+    arcade(4.4, 3.38, M.moss, Math.PI);
+    
+    // 中央ゲーム音楽試聴・マエストロ体験カウンター
+    box(2.0, .8, .8, 1.2, .4, 1.5, M.oak);
+    box(.6, .4, .04, 1.2, 1.1, 1.5, M.white); // 体験モニター
+    headphones(0.9, 1.0, 1.5);
+    headphones(1.5, 1.0, 1.5);
+
+    // 全体タイトル・ロゴ
+    label("ミュージックサロン", 3.65, .39, -.04, 2.68, -3.974, { size: 91, color: "#655d53" });
+    label("HIDDEN CLASSIC", 3.40, .40, -.64, .091, 1.25, { size: 96, color: "#354e49", font: "DM Sans", onFloor: true });
+
+    // ライト・照明
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x73827c, 2.55));
+    const daylight = new THREE.DirectionalLight(0xfff2da, 3.35);
+    daylight.position.set(-6, 13, 9);
+    daylight.castShadow = true;
+    scene.add(daylight);
+    spotlight(-4.53, 1.15, 0xdaf0d7);
+    spotlight(-1.5, -2.0, 0xffebd6);
+    spotlight(3.8, -1.8, 0xffddda);
+    spotlight(4.5, 1.2, 0xffe4c6);
+
+    // カメラ操作（ドラッグで回転、ホイールでズーム）
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const orbit = { theta: .70, phi: .68, radius: 23.5 };
+    const desired = { ...orbit };
+    const target = new THREE.Vector3(-1.12, .28, .53);
+    const pointers = new Map();
+    let previousPinch = null;
+
+    host.addEventListener("pointerdown", event => {
+      host.setPointerCapture(event.pointerId);
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      previousPinch = null;
+    });
+    host.addEventListener("pointermove", event => {
+      if (!pointers.has(event.pointerId)) return;
+      const previous = pointers.get(event.pointerId);
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pointers.size === 1) {
+        desired.theta -= (event.clientX - previous.x) * .006;
+        desired.phi = clamp(desired.phi + (event.clientY - previous.y) * .005, .18, 1.42);
+      } else if (pointers.size === 2) {
+        const points = [...pointers.values()];
+        const distance = Math.hypot(points[0].x - points[1].x, points[0].y - points[1].y);
+        if (previousPinch !== null && distance > 0)
+          desired.radius = clamp(desired.radius * previousPinch / distance, 11, 39);
+        previousPinch = distance;
+      }
+    });
+    function release(event) { pointers.delete(event.pointerId); previousPinch = null; }
+    host.addEventListener("pointerup", release);
+    host.addEventListener("pointercancel", release);
+    host.addEventListener("wheel", event => {
+      event.preventDefault();
+      desired.radius = clamp(desired.radius * Math.exp(event.deltaY * .001), 11, 39);
+    }, { passive: false });
+
+    function resize() {
+      const width = Math.max(1, host.clientWidth);
+      const height = Math.max(1, host.clientHeight);
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      orbit.theta += (desired.theta - orbit.theta) * .085;
+      orbit.phi += (desired.phi - orbit.phi) * .085;
+      orbit.radius += (desired.radius - orbit.radius) * .085;
+      camera.position.set(
+        target.x + orbit.radius * Math.sin(orbit.phi) * Math.sin(orbit.theta),
+        target.y + orbit.radius * Math.cos(orbit.phi),
+        target.z + orbit.radius * Math.sin(orbit.phi) * Math.cos(orbit.theta)
+      );
+      camera.lookAt(target);
+      renderer.render(scene, camera);
+    }
+    animate();
+  })();
+  </script>
+</body></html>
